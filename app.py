@@ -74,7 +74,7 @@ def questao_mais_legal():
 
 
 @app.route('/refresh_token', methods=['GET'])
-@jwt_refresh_required
+#@jwt_refresh_required
 def refresh_token():    
     token = col_tokens.find_one({'value': g.token})
     if token:
