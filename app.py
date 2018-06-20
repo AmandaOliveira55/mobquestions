@@ -52,7 +52,7 @@ def signin():
         return "Unauthorized", 401
 
 @app.route('/', methods=['GET'])
-@jwt_required
+#@jwt_required
 def index():
     res = col_users.find({})
     return json_util.dumps(list(res)), 200
@@ -91,7 +91,7 @@ def refresh_token():
 
 # rota para visualizar o conteudo do payload encriptado no token.
 @app.route('/token', methods=['GET'])
-@jwt_required
+#@jwt_required
 def token():    
     return json_util.dumps(g.parsed_token), 200
 
